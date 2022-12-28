@@ -2,20 +2,25 @@ let nombre = prompt("Bienvenido al Bar, ingresa tu nombre!")
 
 alert("Bienvenido/a" + " " + nombre)
 
-const pizza = 2500;
-const pizza2 = 3000;
+const arrayComidas = [
+    { id: 1, nombre: "pizza", precio: 2500, stock: 100 },
+    { id: 2, nombre: "panino", precio: 1900, stock: 200 },
+    { id: 3, nombre: "empanada", precio: 280, stock: 300 },
+    { id: 4, nombre: "ravioles", precio: 950, stock: 400 },
+];
 
-const panino = 1900;
-const panino2 = 2000;
+function Comida(id, nombre, precio, stock) {
+    this.id = id;
+    this.nombre = nombre;
+    this.precio = Number(precio);
+    this.stock = Number(stock);
+}
+const com = new Comida(5, "carlitos", 1000, 500)
+arrayComidas.push(com)
 
-const empanada = 280;
-const empanada2 = 300;
-
-const ravioles = 950;
-const ravioles2 = 1000;
-
-const carlitos = 1790;
-const carlitos2 = 2000;
+arrayComidas.forEach((numero) => {
+    console.log(numero.nombre)
+});
 
 let totalF = 0;
 
@@ -24,61 +29,62 @@ function error() {
 }
 
 
-let comidas = prompt("Elige una comida de nuestro menu: \npizza \nempanada \npanino \ncarlitos \nravioles \nPresiona ESC para finalizar.")
+let comidas = prompt("Elige una comida de nuestro menu: \n1-pizza \n2-empanada \n3-panino \n4-carlitos \n5-ravioles \nPresiona ESC para finalizar.")
 while (comidas != "ESC") {
+    cantidad = prompt("Cuantas unidades quiere comprar?")
 
     switch (comidas) {
-        case "pizza":
-            let tipo = prompt("Elija de mozarella o de fugazza");
-            if (tipo === "mozarella") {
-                totalF = parseInt(totalF + pizza)
-            } else if (tipo === "fugazza") {
-                totalF = parseInt(totalF + pizza2)
+        case "1":
+            if (cantidad <= arrayComidas[comidas - 1].stock) {
+                alert("una pizza cuesta: " + arrayComidas[comidas - 1].precio);
+                totalF += (cantidad * arrayComidas[comidas - 1].precio);
+                alert("El total  es $" + totalF);
             }
+
             else {
                 error();
             }
             break;
-        case "panino":
-            let tipo2 = prompt("Elija entre familiar o vegetariano");
-            if (tipo2 === "familiar") {
-                totalF = parseInt(totalF + panino)
-            } else if (tipo2 === "vegetariano") {
-                totalF = parseInt(totalF + panino2)
+        case "2":
+            if (cantidad <= arrayComidas[comidas - 1].stock) {
+                alert("un panino cuesta: " + arrayComidas[comidas - 1].precio);
+                totalF += (cantidad * arrayComidas[comidas - 1].precio);
+                alert("El total  es $" + totalF);
             }
+
             else {
                 error();
             }
             break;
-        case "empanada":
-            let tipo3 = prompt("Elija entre capresse o de verdura");
-            if (tipo3 === "capresse") {
-                totalF = parseInt(totalF + empanada)
-            } else if (tipo3 === "verdura") {
-                totalF = parseInt(totalF + empanada2)
+        case "3":
+            if (cantidad <= arrayComidas[comidas - 1].stock) {
+                alert("una empanada cuesta: " + arrayComidas[comidas - 1].precio);
+                totalF += (cantidad * arrayComidas[comidas - 1].precio);
+                alert("El total  es $" + totalF);
             }
+
             else {
                 error();
             }
             break;
-        case "ravioles":
-            let tipo4 = prompt("Elija entre de carne o de ricota");
-            if (tipo4 === "carne") {
-                totalF = parseInt(totalF + ravioles)
-            } else if (tipo4 === "ricota") {
-                totalF = parseInt(totalF + ravioles2)
+        case "4":
+            if (cantidad <= arrayComidas[comidas - 1].stock) {
+                alert("un plato de ravioles cuesta: " + arrayComidas[comidas - 1].precio);
+                totalF += (cantidad * arrayComidas[comidas - 1].precio);
+                alert("El total  es $" + totalF);
             }
+
             else {
                 error();
             }
             break;
-        case "carlitos":
-            let tipo5 = prompt("Elija entre simple o de pollo");
-            if (tipo5 === "simple") {
-                totalF = parseInt(totalF + carlitos)
-            } else if (tipo5 === "pollo") {
-                totalF = parseInt(totalF + carlitos2)
+        case "5":
+            if (cantidad <= arrayComidas[comidas - 1].stock) {
+                alert("una caja de carlitos cuesta: " + arrayComidas[comidas - 1].precio);
+                totalF += (cantidad * arrayComidas[comidas - 1].precio);
+                alert("El total  es $" + totalF);
             }
+
             else {
                 error();
             }
@@ -88,7 +94,7 @@ while (comidas != "ESC") {
             alert("Opción no valida");
             break;
     }
-    comidas = prompt("Elige una comida de nuestro menu: \npizza \nempanada \npanino \ncarlitos \nravioles \nPresiona ESC para finalizar.")
+    comidas = prompt("Elige una comida de nuestro menu: \n1-pizza \n2-empanada \n3-panino \n4-carlitos \n5-ravioles \nPresiona ESC para finalizar.")
 
 
 }
@@ -97,19 +103,7 @@ alert("el total a pagar es " + totalF)
 
 
 
-class Persona {
-    constructor(nombre, apellido, direccion, email) {
-      this.nombre = nombre;
-      this.apellido = apellido;
-      this.direccion = direccion;
-      this.email = email;
-    }
-}
-personas=[]
-function agregarContacto(){
-    personas.push(Persona);
-    console.log(Persona);
-  }
+
 
 
 
