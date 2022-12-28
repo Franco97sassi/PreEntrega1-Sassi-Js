@@ -19,7 +19,7 @@ const carlitos2 = 2000;
 
 let totalF = 0;
 
-function error(){
+function error() {
     alert("Opcion incorrecta, seleccione opcion valida o ESC para finalizar.");
 }
 
@@ -37,7 +37,7 @@ while (comidas != "ESC") {
             }
             else {
                 error();
-            } 
+            }
             break;
         case "panino":
             let tipo2 = prompt("Elija entre familiar o vegetariano");
@@ -88,8 +88,32 @@ while (comidas != "ESC") {
             alert("Opción no valida");
             break;
     }
-    comidas= prompt("Elige una comida de nuestro menu: \npizza \nempanada \npanino \ncarlitos \nravioles \nPresiona ESC para finalizar.")
+    comidas = prompt("Elige una comida de nuestro menu: \npizza \nempanada \npanino \ncarlitos \nravioles \nPresiona ESC para finalizar.")
 
 
-} 
-alert ("el total a pagar es "+totalF)
+}
+alert("el total a pagar es " + totalF)
+
+
+
+
+class Persona {
+    constructor(nombre, apellido, direccion, email) {
+      this.nombre = nombre;
+      this.apellido = apellido;
+      this.direccion = direccion;
+      this.email = email;
+    }
+}
+personas=[]
+function agregarContacto(){
+    personas.push(Persona);
+    console.log(Persona);
+  }
+
+
+
+
+
+
+
