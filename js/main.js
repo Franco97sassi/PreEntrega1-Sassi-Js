@@ -25,11 +25,11 @@ arrayComidas.forEach((numero) => {
 let totalF = 0;
 
 function error() {
-    alert("Opcion incorrecta, seleccione opcion valida o ESC para finalizar.");
+    alert("no hay stock");
 }
 
 
-let comidas = prompt("Elige una comida de nuestro menu: \n1-pizza \n2-empanada \n3-panino \n4-carlitos \n5-ravioles \nPresiona ESC para finalizar.")
+let comidas = prompt("Elige una comida de nuestro menu: \n1-pizza \n2-panino \n3-empanada \n4-ravioles \n5-carlitos \nPresiona ESC para finalizar.")
 while (comidas != "ESC") {
     cantidad = prompt("Cuantas unidades quiere comprar?")
 
@@ -94,7 +94,7 @@ while (comidas != "ESC") {
             alert("Opción no valida");
             break;
     }
-    comidas = prompt("Elige una comida de nuestro menu: \n1-pizza \n2-empanada \n3-panino \n4-carlitos \n5-ravioles \nPresiona ESC para finalizar.")
+    comidas = prompt("Elige una comida de nuestro menu: \n1-pizza \n2-panino \n3-empanada \n4-ravioles \n5-carlitos \nPresiona ESC para finalizar.")
 
 
 }
